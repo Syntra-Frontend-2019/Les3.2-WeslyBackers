@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+    <textarea id="txtA1" cols="30" rows="30" onkeyup="tellen()"></textarea>
+
+    <p id="aantalL">Aantal letters:</p>
+    <p id="aantalW">Aantal woorden:</p>
+    <p id="laatsteW">Laatste woord:</p>
+    <p id="syntra">'Syntra' komt voor:</p>
+    <button id="upperCase" onclick="upperCase()">to Uppercase</button><button id="lowerCase" onclick="lowerCase()">to Lowercase</button>
+    
+    
+    <script>
+    
+
+    function tellen(){
+
+        var aantalLetters = (document.querySelector("textarea").value).split("");
+        var aantalWoorden = (document.querySelector("textarea").value).split(" ");
+        var inhoud = document.querySelector("textarea").value;
+        var woorden = inhoud.split(" ");
+
+
+        //var laatsteWoord = 
+        console.log(woorden[woorden.length-1]);
+
+        document.querySelector("#aantalL").innerHTML = "Aantal letters:"+aantalLetters.length;
+        document.querySelector("#aantalW").innerHTML = "Aantal letters:"+aantalWoorden.length;
+        document.querySelector("#laatsteW").innerHTML = "Laatste woord::"+woorden[woorden.length-1];
+
+        if (inhoud.indexOf("Syntra") > -1){
+
+            document.querySelector("#syntra").innerHTML = "Syntra komt voor: Ja";
+
+        } else {
+
+            document.querySelector("#syntra").innerHTML = "Syntra komt voor: Nee";
+        }
+        
+    }
+
+    function upperCase(){
+
+        var inhoud = document.querySelector("textarea").value;
+
+        console.log(inhoud);
+        document.querySelector("textarea").value = inhoud.toUpperCase();
+
+    }
+
+        function lowerCase(){
+
+        var inhoud = document.querySelector("textarea").value;
+
+        console.log(inhoud);
+        document.querySelector("textarea").value = inhoud.toLowerCase();
+
+}
+
+
+
+    </script>
+    
+</body>
+</html>
